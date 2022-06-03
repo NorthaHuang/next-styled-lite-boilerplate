@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb", // Main Rule
+    "prettier" // Add prettier "last". This will turn off eslint rules conflicting with Prettier.
+  ],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "react/function-component-definition": "off",
+
+    // Allow properties spreading
+    "react/jsx-props-no-spreading": "off",
+
+    // 不用 import React
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+
+    // 不強制使用 `export default`
+    "import/prefer-default-export": "off",
+
+    // import 不用加上副檔名
+    "import/extensions": "off",
+
+    // note you must disable the base rule as it can report incorrect errors
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"]
+  }
+}
